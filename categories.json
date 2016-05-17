@@ -1,0 +1,276 @@
+{
+    "categories": [
+        {
+            "id": 39,
+            "tags": [
+                {
+                    "id": 4868,
+                    "title": "Art",
+                    "uuid": "49c6b0fe-f3cf-11e4-8f3d-22000b078648"
+                },
+                {
+                    "id": 4862,
+                    "title": "Books",
+                    "uuid": "49c6afbe-f3cf-11e4-8f37-22000b078648"
+                },
+                {
+                    "id": 4885,
+                    "title": "Community Events",
+                    "uuid": "49c6b48c-f3cf-11e4-8f4e-22000b078648"
+                },
+                {
+                    "id": 4897,
+                    "title": "Film",
+                    "uuid": "49c6b752-f3cf-11e4-8f5a-22000b078648"
+                },
+                {
+                    "id": 427,
+                    "title": "Food & Drink",
+                    "uuid": "62c7ded6-e2c9-542b-a58c-30fe38c82640"
+                },
+                {
+                    "id": 4874,
+                    "title": "Music",
+                    "uuid": "49c6b248-f3cf-11e4-8f43-22000b078648"
+                },
+                {
+                    "id": 4873,
+                    "title": "Stage",
+                    "uuid": "49c6b20c-f3cf-11e4-8f42-22000b078648"
+                }
+            ],
+            "title": "Sections"
+        },
+        {
+            "id": 9,
+            "tags": [
+                {
+                    "id": 4896,
+                    "title": "Critics' Picks",
+                    "uuid": "49c6b716-f3cf-11e4-8f59-22000b078648"
+                }
+            ],
+            "title": "Critics' Picks"
+        },
+        {
+            "id": 1,
+            "tags": [
+                {
+                    "id": 4900,
+                    "title": "Bike",
+                    "uuid": "49c6b87e-f3cf-11e4-8f5d-22000b078648"
+                },
+                {
+                    "id": 4869,
+                    "title": "Black History",
+                    "uuid": "49c6b13a-f3cf-11e4-8f3e-22000b078648"
+                },
+                {
+                    "id": 4888,
+                    "title": "Caribana",
+                    "uuid": "49c6b52c-f3cf-11e4-8f51-22000b078648"
+                },
+                {
+                    "id": 4903,
+                    "title": "CMW",
+                    "uuid": "49c6b9aa-f3cf-11e4-8f60-22000b078648"
+                },
+                {
+                    "id": 4872,
+                    "title": "Contact",
+                    "uuid": "49c6b1da-f3cf-11e4-8f41-22000b078648"
+                },
+                {
+                    "id": 4884,
+                    "title": "Earth Day",
+                    "uuid": "49c6b45a-f3cf-11e4-8f4d-22000b078648"
+                },
+                {
+                    "id": 4867,
+                    "title": "Festive Season",
+                    "uuid": "49c6b0cc-f3cf-11e4-8f3c-22000b078648"
+                },
+                {
+                    "id": 1483,
+                    "title": "Fringe",
+                    "uuid": "b4c55503-9ae2-5de6-9466-5b77c382673b"
+                },
+                {
+                    "id": 4890,
+                    "title": "Halloween",
+                    "uuid": "49c6b5d6-f3cf-11e4-8f53-22000b078648"
+                },
+                {
+                    "id": 350,
+                    "title": "IFOA",
+                    "uuid": "a772f194-420d-5360-a74c-38744364ed6b"
+                },
+                {
+                    "id": 4905,
+                    "title": "IWD",
+                    "uuid": "49c6ba72-f3cf-11e4-8f62-22000b078648"
+                },
+                {
+                    "id": 1932,
+                    "title": "Luminato",
+                    "uuid": "caf39223-bff3-526d-b6a6-2b4d8f570582"
+                },
+                {
+                    "id": 4902,
+                    "title": "March Break",
+                    "uuid": "49c6b950-f3cf-11e4-8f5f-22000b078648"
+                },
+                {
+                    "id": 4889,
+                    "title": "New Year's",
+                    "uuid": "49c6b59a-f3cf-11e4-8f52-22000b078648"
+                },
+                {
+                    "id": 1528,
+                    "title": "Nuit Blanche",
+                    "uuid": "35107e6b-97c8-55e1-90c3-657e06b8f6d9"
+                },
+                {
+                    "id": 4863,
+                    "title": "NXNE",
+                    "uuid": "49c6affa-f3cf-11e4-8f38-22000b078648"
+                },
+                {
+                    "id": 4991,
+                    "title": "Pan Am event",
+                    "uuid": "32faa034-f8e2-11e4-881b-22000b078648"
+                },
+                {
+                    "id": 4854,
+                    "title": "Pride",
+                    "uuid": "49c6a99c-f3cf-11e4-8f2f-22000b078648"
+                },
+                {
+                    "id": 4870,
+                    "title": "St Patrick's",
+                    "uuid": "49c6b16c-f3cf-11e4-8f3f-22000b078648"
+                },
+                {
+                    "id": 6439,
+                    "title": "SummerWorks",
+                    "uuid": "38e839ac-3082-11e5-aef1-22000b078648"
+                },
+                {
+                    "id": 4860,
+                    "title": "Valentine's",
+                    "uuid": "49c6af5a-f3cf-11e4-8f35-22000b078648"
+                }
+            ],
+            "title": "Guides & Special Issues"
+        },
+        {
+            "id": 16,
+            "tags": [
+                {
+                    "id": 4871,
+                    "title": "All Ages",
+                    "uuid": "49c6b1a8-f3cf-11e4-8f40-22000b078648"
+                },
+                {
+                    "id": 4992,
+                    "title": "Free",
+                    "uuid": "476f0a64-f8e2-11e4-881c-22000b078648"
+                },
+                {
+                    "id": 8712,
+                    "title": "Kid-Friendly",
+                    "uuid": "c98ffed8-a36c-11e5-9c70-22000b078648"
+                },
+                {
+                    "id": 4859,
+                    "title": "Ongoing",
+                    "uuid": "49c6af1e-f3cf-11e4-8f34-22000b078648"
+                },
+                {
+                    "id": 4880,
+                    "title": "Out Of Town",
+                    "uuid": "49c6b388-f3cf-11e4-8f49-22000b078648"
+                },
+                {
+                    "id": 4898,
+                    "title": "Outdoor",
+                    "uuid": "49c6b7c0-f3cf-11e4-8f5b-22000b078648"
+                },
+                {
+                    "id": 4883,
+                    "title": "Queer",
+                    "uuid": "49c6b428-f3cf-11e4-8f4c-22000b078648"
+                }
+            ],
+            "title": "Tags"
+        },
+        {
+            "id": 40,
+            "tags": [
+                {
+                    "id": 4901,
+                    "title": "Benefits",
+                    "uuid": "49c6b8e2-f3cf-11e4-8f5e-22000b078648"
+                },
+                {
+                    "id": 4885,
+                    "title": "Community Events",
+                    "uuid": "49c6b48c-f3cf-11e4-8f4e-22000b078648"
+                },
+                {
+                    "id": 4886,
+                    "title": "Festivals",
+                    "uuid": "49c6b4c8-f3cf-11e4-8f4f-22000b078648"
+                }
+            ],
+            "title": "Community Events Categories"
+        },
+        {
+            "id": 10,
+            "tags": [
+                {
+                    "id": 4899,
+                    "title": "Comedy",
+                    "uuid": "49c6b81a-f3cf-11e4-8f5c-22000b078648"
+                },
+                {
+                    "id": 4864,
+                    "title": "Dance",
+                    "uuid": "49c6b02c-f3cf-11e4-8f39-22000b078648"
+                },
+                {
+                    "id": 4857,
+                    "title": "Theatre",
+                    "uuid": "49c6aeb0-f3cf-11e4-8f32-22000b078648"
+                }
+            ],
+            "title": "Stage Categories"
+        },
+        {
+            "id": 12,
+            "tags": [
+                {
+                    "id": 4878,
+                    "title": "Dance Music/DJ/Lounge",
+                    "uuid": "49c6b31a-f3cf-11e4-8f47-22000b078648"
+                },
+                {
+                    "id": 4866,
+                    "title": "Folk/Blues/Country/World",
+                    "uuid": "49c6b09a-f3cf-11e4-8f3b-22000b078648"
+                },
+                {
+                    "id": 4895,
+                    "title": "Jazz/Classical/Experimental",
+                    "uuid": "49c6b6da-f3cf-11e4-8f58-22000b078648"
+                },
+                {
+                    "id": 4855,
+                    "title": "Pop/Rock/Hip-Hop/Soul",
+                    "uuid": "49c6ae10-f3cf-11e4-8f30-22000b078648"
+                }
+            ],
+            "title": "Music Genres"
+        }
+    ]
+}
