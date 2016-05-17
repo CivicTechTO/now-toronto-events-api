@@ -1,6 +1,9 @@
 var argo = require('argo');
 var fs = require('fs');
 var request = require('request');
+var xpath = require('xpath');
+var dom = require('xmldom').DOMParser;
+var trim = require('trim');
 
 argo()
   .use(function(handle) {
@@ -22,6 +25,24 @@ argo()
       request('https://nowtoronto.com/api/search/event/all/get_search_results', function(err, res, body) {
         if (!err && res.statusCode == 200) {
           body = JSON.parse(body);
+          body.per_page = body.rpp;
+          delete body.rpp;
+          body.results.forEach(function(result) {
+            var doc = new dom().parseFromString(result.html);
+            result.description = xpath.select('//p[@class="description"]/text()', doc).toString();
+            result.description = trim(result.description);
+            result.categories = xpath.select('//p[@class="cats"]/span/text()', doc).toString();
+            result.categories = result.categories.split(', ');
+            result.name = result.title;
+            result.date = xpath.select('//p[@class="event_date"]/text()', doc).toString();
+            result.url = xpath.select('string(//a[@class="more_link"]/@href)', doc).toString();
+            result.venue = {};
+            result.venue.url = 'https://nowtoronto.com/locations/' + result.urlname + '/';
+            result.venue.slug = result.urlname;
+            delete result.html;
+            delete result.urlname;
+            delete result.title;
+          })
           env.response.body = JSON.stringify(body, null, 2);
           env.response.statusCode = 200;
         }
