@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "argo": "^1.0.0",
-    "requests": "^0.1.7"
+    "request": "^2.72.0"
   }
 }

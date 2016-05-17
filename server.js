@@ -1,5 +1,6 @@
 var argo = require('argo');
 var fs = require('fs');
+var request = require('request');
 
 argo()
   .use(function(handle) {
@@ -18,8 +19,15 @@ argo()
   })
   .get('^/events$', function(handle) {
     handle('request', function(env, next) {
-      env.target.url = 'https://nowtoronto.com/api/search/event/all/get_search_results';
-      next(env);
+      request('https://nowtoronto.com/api/search/event/all/get_search_results', function(err, res, body) {
+        if (!err && res.statusCode == 200) {
+          body = JSON.parse(body);
+          env.response.body = JSON.stringify(body, null, 2);
+          env.response.statusCode = 200;
+        }
+        next(env);
+      })
+      //env.target.url = 'https://nowtoronto.com/api/search/event/all/get_search_results';
     })
   })
   .listen(process.env.PORT || 1337);
