@@ -1,9 +1,10 @@
 var argo = require('argo');
-var fs = require('fs');
-var request = require('request');
-var xpath = require('xpath');
 var dom = require('xmldom').DOMParser;
+var fs = require('fs');
+var qs = require('qs');
+var request = require('request');
 var trim = require('trim');
+var xpath = require('xpath');
 
 argo()
   .use(function(handle) {
@@ -22,8 +23,8 @@ argo()
   })
   .get('^/venues$', function(handle) {
     handle('request', function(env, next) {
-      url = 'https://nowtoronto.com/api/search/location/all/get_map_search_results?tile=0,0,0';
-      request(url, function(err, res, body) {
+      var venues_url = 'https://nowtoronto.com/api/search/location/all/get_map_search_results?tile=0,0,0';
+      request(venues_url, function(err, res, body) {
         if (!err && res.statusCode == 200) {
           body = JSON.parse(body);
           var items = []
@@ -46,35 +47,43 @@ argo()
       })
     })
   })
-  .get('^/events$', function(handle) {
-    handle('request', function(env, next) {
-      url = 'https://nowtoronto.com/api/search/event/all/get_search_results';
-      request(url, function(err, res, body) {
-        if (!err && res.statusCode == 200) {
-          body = JSON.parse(body);
-          body.per_page = body.rpp;
-          delete body.rpp;
-          body.results.forEach(function(result) {
-            var doc = new dom().parseFromString(result.html);
-            result.description = xpath.select('//p[@class="description"]/text()', doc).toString();
-            result.description = trim(result.description);
-            result.categories = xpath.select('//p[@class="cats"]/span/text()', doc).toString();
-            result.categories = result.categories.split(', ');
-            result.name = result.title;
-            result.date = xpath.select('//p[@class="event_date"]/text()', doc).toString();
-            result.url = xpath.select('string(//a[@class="more_link"]/@href)', doc).toString();
-            result.venue = {};
-            result.venue.url = 'https://nowtoronto.com/locations/' + result.urlname + '/';
-            result.venue.slug = result.urlname;
-            delete result.html;
-            delete result.urlname;
-            delete result.title;
+  .map('^/events', function(server) {
+    server
+      .get('^/?(?:\\?(.*))?$', function(handle) {
+        handle('request', function(env, next) {
+          var query = qs.parse(env.route.params[1]);
+          var page = query.page;
+          var events_url = 'https://nowtoronto.com/api/search/event/all/get_search_results';
+          if (page) {
+            events_url = events_url + '?page=' + page;
+          }
+          request(events_url, function(err, res, body) {
+            if (!err && res.statusCode == 200) {
+              body = JSON.parse(body);
+              body.per_page = body.rpp;
+              delete body.rpp;
+              body.results.forEach(function(result) {
+                var doc = new dom().parseFromString(result.html);
+                result.description = xpath.select('//p[@class="description"]/text()', doc).toString();
+                result.description = trim(result.description);
+                result.categories = xpath.select('//p[@class="cats"]/span/text()', doc).toString();
+                result.categories = result.categories.split(', ');
+                result.name = result.title;
+                result.date = xpath.select('//p[@class="event_date"]/text()', doc).toString();
+                result.url = xpath.select('string(//a[@class="more_link"]/@href)', doc).toString();
+                result.venue = {};
+                result.venue.url = 'https://nowtoronto.com/locations/' + result.urlname + '/';
+                result.venue.slug = result.urlname;
+                delete result.html;
+                delete result.urlname;
+                delete result.title;
+              })
+              env.response.body = JSON.stringify(body, null, 2);
+              env.response.statusCode = 200;
+            }
+            next(env);
           })
-          env.response.body = JSON.stringify(body, null, 2);
-          env.response.statusCode = 200;
-        }
-        next(env);
+        })
       })
-    })
   })
   .listen(process.env.PORT || 1337);

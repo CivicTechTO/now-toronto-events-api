@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "argo": "^1.0.0",
+    "qs": "^6.2.0",
     "request": "^2.72.0",
     "trim": "0.0.1",
     "xmldom": "^0.1.22",
