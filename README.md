@@ -10,7 +10,7 @@ backend.
   * **Params:**
     * `page`: int
     * `search_date`: YYYY-MM-DD
-    * `search_text`: string
+    * `search_value`: string
 * [`/venues`](https://now-toronto-events-api.herokuapp.com/venues)
 
 ### References
