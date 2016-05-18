@@ -61,12 +61,20 @@ argo()
               delete body.rpp;
               body.results.forEach(function(result) {
                 var doc = new dom().parseFromString(result.html);
+                var date_string = xpath.select('//p[@class="event_date"]/text()', doc).toString();
+                var date_re = /^(\w+ \d{1,2}, \d{4})(?: (\d{1,2}:\d{2} [AP]M))?(?: - (\w+ \d{1,2}, \d{4})? ?(\d{1,2}:\d{2} [AP]M)?)?$/;
+                var date_matches = date_re.exec(date_string);
+                var start_date = date_matches[1];
+                var start_time = date_matches[2] || '';
+                var end_date = date_matches[3];
+                var end_time = date_matches[4] || '';
                 result.description = xpath.select('//p[@class="description"]/text()', doc).toString();
                 result.description = trim(result.description);
                 result.categories = xpath.select('//p[@class="cats"]/span/text()', doc).toString();
                 result.categories = result.categories.split(', ');
                 result.name = result.title;
-                result.date = xpath.select('//p[@class="event_date"]/text()', doc).toString();
+                result.start_date = new Date(start_date + ' ' + start_time).toJSON();
+                result.end_date = new Date(end_date + ' ' + end_time).toJSON();
                 result.url = xpath.select('string(//a[@class="more_link"]/@href)', doc).toString();
                 result.venue = {};
                 result.venue.url = 'https://nowtoronto.com/locations/' + result.urlname + '/';
