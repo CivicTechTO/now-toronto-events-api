@@ -52,11 +52,8 @@ argo()
       .get('^/?(?:\\?(.*))?$', function(handle) {
         handle('request', function(env, next) {
           var query = qs.parse(env.route.params[1]);
-          var page = query.page;
           var events_url = 'https://nowtoronto.com/api/search/event/all/get_search_results';
-          if (page) {
-            events_url = events_url + '?page=' + page;
-          }
+          events_url = events_url + '?' + qs.stringify(query);
           request(events_url, function(err, res, body) {
             if (!err && res.statusCode == 200) {
               body = JSON.parse(body);

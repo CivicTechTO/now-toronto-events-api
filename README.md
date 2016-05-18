@@ -7,7 +7,10 @@ backend.
 
 * [`/categories`](https://now-toronto-events-api.herokuapp.com/categories)
 * [`/events`](https://now-toronto-events-api.herokuapp.com/events)
-  * **Params:** `page`
+  * **Params:**
+    * `page`: int
+    * `search_date`: YYYY-MM-DD
+    * `search_text`: string
 * [`/venues`](https://now-toronto-events-api.herokuapp.com/venues)
 
 ### References
